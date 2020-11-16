@@ -20,6 +20,8 @@
 #endif
 #include "imp.h"
 
+extern const struct flash_driver gd32e23x_flash;
+extern const struct flash_driver gd32vf103_flash;
 extern const struct flash_driver aduc702x_flash;
 extern const struct flash_driver aducm360_flash;
 extern const struct flash_driver ambiqmicro_flash;
@@ -92,6 +94,8 @@ extern const struct flash_driver xmc4xxx_flash;
  * @todo Make this dynamically extendable with loadable modules.
  */
 static const struct flash_driver * const flash_drivers[] = {
+	&gd32e23x_flash,
+	&gd32vf103_flash,
 	&aduc702x_flash,
 	&aducm360_flash,
 	&ambiqmicro_flash,
