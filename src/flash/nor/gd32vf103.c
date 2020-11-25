@@ -666,7 +666,7 @@ static int gd32vf103_write(struct flash_bank *bank, const uint8_t *buffer,
 		}
 		LOG_INFO("GD32: Flash write ... not double words to write, padding with 0xff");
 		memcpy(new_buffer, buffer, count);
-		for (unsigned int i = 1; i <= add_bytes; i++)
+		for (unsigned int i = 0; i < add_bytes; i++)
 			new_buffer[count+i] = 0xff;
 	}
 
